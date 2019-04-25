@@ -14,9 +14,9 @@
 
 模块说明：
 
-- dubbo-demo-api:公共模块，用于定义接口，其它模块依赖于此模块
-- dubbo-demo-provider:提供者模块，暴露服务
-- dubbo-demo-consumer:消费者模块，远程调用服务
+- dubbo-demo-api: 公共模块，用于定义接口，其它模块依赖于此模块
+- dubbo-demo-provider: 提供者模块，暴露服务
+- dubbo-demo-consumer: 消费者模块，远程调用服务
 - dubbo-demo-annotation: 是基于注解的方式使用dubbo，包含了提供者和消费者的实现。
 
 
