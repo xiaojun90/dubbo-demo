@@ -18,7 +18,10 @@ public class SpringConsumerApplication {
                 new ClassPathXmlApplicationContext("application-consumer.xml");
         DemoService demoService = (DemoService) context.getBean("demoService");
         UserService userService = (UserService) context.getBean("userService");
-        System.out.println(demoService.sayHello("xiaojun"));
-        System.out.println(userService.getAge("xiaojun"));
+        while (true) {
+            System.out.println(demoService.sayHello("xiaojun"));
+            System.out.println(userService.getAge("xiaojun"));
+        }
+
     }
 }
