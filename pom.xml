@@ -26,6 +26,7 @@
         <dubbo_version>2.7.0</dubbo_version>
         <curator_version>4.0.1</curator_version>
         <zookeeper_version>3.4.13</zookeeper_version>
+        <platform_bom_version>Cairo-SR7</platform_bom_version>
     </properties>
 
     <dependencies>
@@ -44,6 +45,14 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--引入platform bom-->
+            <dependency>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+                <version>${platform_bom_version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo</artifactId>
