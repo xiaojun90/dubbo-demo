@@ -13,15 +13,17 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class SpringConsumerApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("application-consumer.xml");
         DemoService demoService = (DemoService) context.getBean("demoService");
         UserService userService = (UserService) context.getBean("userService");
-        while (true) {
+        for (int i=0;i<100000;i++) {
             System.out.println(demoService.sayHello("xiaojun"));
-            System.out.println(userService.getAge("xiaojun"));
+            Thread.sleep(1);
         }
+        System.out.println(demoService.sayHello("xiaojun"));
+        System.out.println(userService.getAge("xiaojun"));
 
     }
 }

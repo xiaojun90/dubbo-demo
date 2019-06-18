@@ -11,9 +11,9 @@
         <dubbo:parameter key="qos.port" value="33333"/>
     </dubbo:application>
     <!--dubbo 注册中心-->
-    <dubbo:registry address="zookeeper://localhost:2181" />
+    <dubbo:registry address="zookeeper://192.168.71.129:2181" />
 
-    <dubbo:reference interface="com.joyxj.dubbo.demo.api.DemoService"  id="demoService"/>
+    <dubbo:reference interface="com.joyxj.dubbo.demo.api.DemoService"  id="demoService" group="demo"/>
     <dubbo:reference interface="com.joyxj.dubbo.demo.api.UserService" id="userService"/>
 
 </beans>

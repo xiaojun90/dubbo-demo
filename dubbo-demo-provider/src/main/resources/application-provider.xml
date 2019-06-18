@@ -16,10 +16,11 @@
         <dubbo:parameter key="qos.port" value="22222"/>
     </dubbo:application>
     <!--dubbo 注册中心-->
-    <dubbo:registry address="zookeeper://localhost:2181" />
+    <dubbo:registry address="zookeeper://192.168.71.129:2181" />
     <!-- 用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20880"/>
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="com.joyxj.dubbo.demo.api.DemoService" ref="demoServiceImpl" />
+    <dubbo:service interface="com.joyxj.dubbo.demo.api.DemoService" group="" ref="demoServiceImpl" />
+    <dubbo:service interface="com.joyxj.dubbo.demo.api.DemoService" group="demo" ref="demoServiceImpl" />
     <dubbo:service interface="com.joyxj.dubbo.demo.api.UserService" ref="userServiceImpl"/>
 </beans>
