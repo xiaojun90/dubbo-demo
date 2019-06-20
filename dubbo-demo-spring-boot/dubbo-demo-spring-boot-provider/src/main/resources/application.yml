@@ -1,0 +1,12 @@
+dubbo:
+  application:
+    name: spring-boot-provider
+    qos-enable: false
+  registry:
+    address: zookeeper://192.168.71.135:2181
+  protocol:
+    port: 21883
+server:
+  port: 8080
+logging:
+  file: provider.log
