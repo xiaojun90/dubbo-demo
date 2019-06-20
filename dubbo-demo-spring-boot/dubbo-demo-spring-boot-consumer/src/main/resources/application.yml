@@ -1,17 +1,17 @@
 dubbo:
   application:
-    name: spring-boot-provider
+    name: spring-boot-consumer
     qos-enable: false
   registry:
     address: zookeeper://192.168.18.128:2181
   protocol:
-    port: 21883
+    port: 21885
     name: dubbo
   config-center:
     address: zookeeper://192.168.18.128:2181
   metadata-report:
     address: zookeeper://192.168.18.128:2181
 server:
-  port: 8080
+  port: 8081
 logging:
   file: provider.log
