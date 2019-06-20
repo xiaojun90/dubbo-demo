@@ -1,6 +1,8 @@
 HELP.md
 /target/
 */target/
+**/target/
+
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
@@ -16,6 +18,8 @@ HELP.md
 .idea
 *.iws
 *.iml
+*.log
+**/*.log
 .mvn
 *.ipr
 

@@ -11,6 +11,7 @@
         <dubbo:parameter key="qos.port" value="33333"/>
     </dubbo:application>
     <!--dubbo 注册中心-->
+<<<<<<< HEAD
     <dubbo:registry address="zookeeper://192.168.18.128:2181" />
 
     <!--监控中心-->
@@ -18,5 +19,11 @@
 
     <dubbo:reference interface="com.joyxj.dubbo.demo.api.DemoService" group="demo" version="1.0.0" id="demoService"/>
     <dubbo:reference interface="com.joyxj.dubbo.demo.api.UserService" group="demo" version="1.0.0" id="userService"/>
+=======
+    <dubbo:registry address="zookeeper://192.168.71.129:2181" />
+
+    <dubbo:reference interface="com.joyxj.dubbo.demo.api.DemoService"  id="demoService" group="demo"/>
+    <dubbo:reference interface="com.joyxj.dubbo.demo.api.UserService" id="userService"/>
+>>>>>>> d2f94349c81dfc2a6c7c61fc8944646360f3fc27
 
 </beans>
