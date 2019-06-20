@@ -59,6 +59,12 @@
                 <version>${dubbo_version}</version>
             </dependency>
             <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-monitor</artifactId>
+                <version>${dubbo_version}</version>
+                <type>pom</type>
+            </dependency>
+            <dependency>
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-framework</artifactId>
                 <version>${curator_version}</version>

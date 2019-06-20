@@ -16,10 +16,16 @@
         <dubbo:parameter key="qos.port" value="22222"/>
     </dubbo:application>
     <!--dubbo 注册中心-->
-    <dubbo:registry address="zookeeper://localhost:2181" />
+    <dubbo:registry address="zookeeper://192.168.18.128:2181" />
+
+    <!--监控中心-->
+    <dubbo:monitor protocol="registry"></dubbo:monitor>
     <!-- 用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20880"/>
+    <dubbo:protocol name="rmi" port="1099"></dubbo:protocol>
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="com.joyxj.dubbo.demo.api.DemoService" ref="demoServiceImpl" />
-    <dubbo:service interface="com.joyxj.dubbo.demo.api.UserService" ref="userServiceImpl"/>
+    <!--使用 dubbo 协议暴露服务-->
+    <dubbo:service interface="com.joyxj.dubbo.demo.api.DemoService" ref="demoServiceImpl" group="demo" protocol="dubbo,hessian" version="1.0.0"/>
+    <!--使用 rmi 协议暴露服务-->
+    <dubbo:service interface="com.joyxj.dubbo.demo.api.UserService" ref="userServiceImpl" group="demo" protocol="rmi" version="1.0.0"/>
 </beans>

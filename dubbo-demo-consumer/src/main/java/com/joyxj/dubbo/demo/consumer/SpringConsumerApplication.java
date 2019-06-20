@@ -19,6 +19,11 @@ public class SpringConsumerApplication {
         DemoService demoService = (DemoService) context.getBean("demoService");
         UserService userService = (UserService) context.getBean("userService");
         while (true) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             System.out.println(demoService.sayHello("xiaojun"));
             System.out.println(userService.getAge("xiaojun"));
         }
