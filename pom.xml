@@ -19,8 +19,8 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <target.level>1.8</target.level>
-        <dubbo_version>2.7.1</dubbo_version>
+        <target.version>1.8</target.version>
+        <dubbo_version>2.7.0</dubbo_version>
         <curator_version>4.0.1</curator_version>
         <zookeeper_version>3.4.13</zookeeper_version>
         <platform_bom_version>Cairo-SR7</platform_bom_version>
@@ -54,22 +54,6 @@
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo</artifactId>
                 <version>${dubbo_version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-metadata-report-zookeeper</artifactId>
-                <version>${dubbo_version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-configcenter-zookeeper</artifactId>
-                <version>${dubbo_version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-monitor</artifactId>
-                <version>${dubbo_version}</version>
-                <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>org.apache.curator</groupId>
@@ -112,6 +96,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${target.version}</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
