@@ -11,7 +11,7 @@
     <!-- 提供方应用信息，用于计算依赖关系 -->
     <dubbo:application name="dubbo-demo-provider">
         <!--在线运维命令配置-->
-        <dubbo:parameter key="qos.enable" value="true"/>
+        <dubbo:parameter key="qos.enable" value="false"/>
         <dubbo:parameter key="qos.accept.foreign.ip" value="false"/>
         <dubbo:parameter key="qos.port" value="22222"/>
     </dubbo:application>
@@ -19,18 +19,19 @@
     <!--<dubbo:registry address="zookeeper://192.168.18.128:2181" />-->
 
     <!--监控中心-->
-    <dubbo:monitor protocol="registry"></dubbo:monitor>
+    <!--<dubbo:monitor protocol="registry"></dubbo:monitor>-->
     <!--<dubbo:registry address="zookeeper://192.168.18.128:2181" />-->
     <dubbo:registry address="zookeeper://192.168.71.128:2181" />
     <dubbo:config-center address="zookeeper://192.168.71.128:2181"></dubbo:config-center>
 
 
     <!-- 用dubbo协议在20880端口暴露服务 -->
-    <dubbo:protocol name="dubbo" port="20880"/>
-    <!--<dubbo:protocol name="rmi" port="1099"></dubbo:protocol>-->
+    <dubbo:protocol name="dubbo" port="20882" id="dubbo1"/>
+    <dubbo:protocol name="dubbo" port="20883" id="dubbo2"/>
+    <!--<dubbo:protocol name="rmi" port="2099"></dubbo:protocol>-->
     <!-- 声明需要暴露的服务接口 -->
     <!--使用 dubbo 协议暴露服务-->
-    <dubbo:service interface="com.joyxj.dubbo.demo.api.DemoService" ref="demoServiceImpl" group="demo" protocol="dubbo,hessian" version="1.0.0"/>
+    <dubbo:service interface="com.joyxj.dubbo.demo.api.DemoService" ref="demoServiceImpl" group="demo" protocol="dubbo1,dubbo2"  version="1.0.0"/>
     <!--使用 rmi 协议暴露服务-->
     <!--<dubbo:service interface="com.joyxj.dubbo.demo.api.UserService" ref="userServiceImpl" group="demo" protocol="rmi" version="1.0.0"/>-->
     <dubbo:service interface="com.joyxj.dubbo.demo.api.DemoService" group="" ref="demoServiceImpl" />
